@@ -49,7 +49,7 @@ function App() {
     {/* <Switch> */}
           {/* <Route exact path="/about"> */}
             <Textform showAlert = {showAlert} heading = "enter the text to analyse" mode={mode}/>
-            <About/>
+            <About mode={mode}/>
           {/* </Route> */}
           {/* <Route exact path="/"> */}
 

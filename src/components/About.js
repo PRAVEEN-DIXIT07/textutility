@@ -1,28 +1,16 @@
 import React,{useState} from 'react'
 
-export default function About() {
-    const[mystyle,setmystyle]=useState({
-        color:'white',
-        backgroundColor:'black'
-    })
+export default function About(props) {
+    // const[mystyle,setmystyle]=useState({
+    //     color:'white',
+    //     backgroundColor:'black'
+    // })
 
-    const[btntext,setbtntext] = useState("Light Mode");
-    const toggleStyle=()=>{
-        if(mystyle.color =='white'){
-            setmystyle({
-                color:'black',
-                backgroundColor:'white'
-            })
-            setbtntext("Dark Mode");
-        }
-        else{
-            setmystyle({
-                color:'white',
-                backgroundColor:'black'
-            })
-            setbtntext("Light Mode");
-        }
+    let mystyle ={
+      color:props.mode === 'dark'?'white':'#0e2433',
+      backgroundColor:props.mode ==='dark'?'#0e2433':'white'
     }
+
   return (
     <div classNameNameNameName="container" style ={mystyle}>
         <h2>About Us</h2>
@@ -30,7 +18,7 @@ export default function About() {
   <div className="accordion-item">
     <h2 className="accordion-header">
       <button className="accordion-button" style={mystyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Accordion Item #1
+        Analyse your text
       </button>
     </h2>
     <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -42,7 +30,7 @@ export default function About() {
   <div className="accordion-item">
     <h2 className="accordion-header">
       <button className="accordion-button collapsed" style={mystyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
+        Free to use
       </button>
     </h2>
     <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -54,7 +42,7 @@ export default function About() {
   <div className="accordion-item">
     <h2 className="accordion-header">
       <button className="accordion-button collapsed" style={mystyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
+        Browser Compatible
       </button>
     </h2>
     <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -66,7 +54,7 @@ export default function About() {
 </div>
     <div classNameName="container my-2">
 
-    <button onClick={toggleStyle} type="button" classNameName = "btn btn-primary ">{btntext}</button>
+
     </div>
     </div>
   )
